@@ -157,312 +157,187 @@
 			</div>
 			<!-- Marquee Section -->
 
-			<!-- Carousel Section -->
-			<div class="swiper">
-				<div class="swiper-wrapper">
-					<!-- Slides -->
-					<div class="swiper-slide">
-						<img
-							class="w-full"
-							src="assets/images/carousel/1.png"
-							alt="" />
+			<!-- Page Body Section -->
+
+			<div class="px-2">
+				<!-- Tabe Menu Section -->
+				<div class="grid grid-cols-3 text-center tab-menu font-bold my-2 text-sm">
+					<div
+						onclick="location.href='deposit.html'"
+						class="active">
+						충전신청
 					</div>
-					<div class="swiper-slide">
+					<div onclick="location.href='withdrawal.html'">환전신청</div>
+					<div onclick="location.href='point-history.html'">포인트전환 내역</div>
+				</div>
+				<!-- Tabe Menu Section -->
+
+				<!-- Page Note Section -->
+				<div class="page-note-section bg-secondaryBg border border-white/20 text-white p-5 rounded mb-2">
+					<div class="flex items-center gap-1 mb-2">
 						<img
-							class="w-full"
-							src="assets/images/carousel/2.png"
+							class="w-8"
+							src="./assets/images/icons/svg/warning.svg"
 							alt="" />
+						<h2 class="text-primary font-bold text-xl">필독/주의사항</h2>
 					</div>
-					<div class="swiper-slide">
-						<img
-							class="w-full"
-							src="assets/images/carousel/3.png"
-							alt="" />
+
+					<div class="leading-8 text-xs p-4">
+						<p class="font-normal">
+							<span class="text-primary">①</span> 입금하실 계좌에 PC 뱅킹, 폰뱅킹, 무통장 입금, ATM등의
+							입금 방법중 하나를 선택하여
+						</p>
+						<p class="font-normal">
+							<span class="text-primary">②</span> 입금하신 금액과 동일한 금액을 체크하세요.
+						</p>
+						<p class="font-normal">
+							<span class="text-primary">③</span> 입금자명에는 입금하신 분의 성함을 넣어 주세요.
+						</p>
+						<p class="font-normal">
+							<span class="text-primary">④</span> 신청 버튼을 클릭하시면 충전이 완료됩니다.
+						</p>
+						<p class="font-normal">
+							<span class="text-primary">⑤</span> 수표 입금시 충전처리가 되지않으며, 혹시 입금을 하셨을
+							경우 바로 환전이 불가합니다.
+						</p>
+						<p class="font-normal">
+							운영진측에서 정상적인 수표 확인이된 후에 환전을 해드리도록 하겠습니다.
+						</p>
 					</div>
-					<div class="swiper-slide">
-						<img
-							class="w-full"
-							src="assets/images/carousel/4.png"
-							alt="" />
+				</div>
+				<!-- Page Note Section -->
+
+				<div class="bg-secondaryBg border border-white/20 text-white p-5 rounded mb-2">
+					<div class="transaction-input border-b p-4 border-white/10">
+						<label class="text-white mb-2 block">입금자명</label>
+						<input
+							type="text"
+							class="w-full border border-primary/50 bg-primaryBg p-2 rounded mb-2"
+							value="test01"
+							readonly />
+						<p class="text-gray-500 text-sm">
+							* 입금자 이름이 틀리면 입금확인 을 할 수가 없으니 주의하세요!
+						</p>
 					</div>
-					<div class="swiper-slide">
-						<img
-							class="w-full"
-							src="assets/images/carousel/5.png"
-							alt="" />
+					<div class="transaction-input border-b p-4 border-white/10">
+						<label class="text-white mb-2 block">보유머니</label>
+
+						<p class="text-gray-500">
+							<span class="text-primary text-xl font-bold">31,000 </span>
+							<span> 원</span>
+						</p>
 					</div>
-					<div class="swiper-slide">
-						<img
-							class="w-full"
-							src="assets/images/carousel/6.png"
-							alt="" />
+					<div class="transaction-input border-b p-4 border-white/10">
+						<label class="text-white mb-2 block">입금신청금액</label>
+
+						<div class="grid grid-cols-3 gap-2 mb-2">
+							<div class="col-span-2">
+								<div class="flex items-center gap-1">
+									<input
+										id="transaction-input"
+										type="text"
+										class="w-full border border-primary/50 bg-primaryBg p-2 rounded"
+										readonly />
+									<p class="text-white">원</p>
+								</div>
+							</div>
+							<div class="col-span-1">
+								<button
+									onclick="resetTransactionAmount()"
+									class="transaction-amount-button reset-amount w-full h-10">
+									정정
+								</button>
+							</div>
+							<div class="col-span-1">
+								<button
+									onclick="incrementAmount(10_000)"
+									class="transaction-amount-button w-full h-10">
+									1만원
+								</button>
+							</div>
+							<div class="col-span-1">
+								<button
+									onclick="incrementAmount(30_000)"
+									class="transaction-amount-button w-full h-10">
+									3만원
+								</button>
+							</div>
+							<div class="col-span-1">
+								<button
+									onclick="incrementAmount(50_000)"
+									class="transaction-amount-button w-full h-10">
+									5만원
+								</button>
+							</div>
+							<div class="col-span-1">
+								<button
+									onclick="incrementAmount(100_000)"
+									class="transaction-amount-button w-full h-10">
+									10만원
+								</button>
+							</div>
+							<div class="col-span-1">
+								<button
+									onclick="incrementAmount(500_000)"
+									class="transaction-amount-button w-full h-10">
+									50만원
+								</button>
+							</div>
+							<div class="col-span-1">
+								<button
+									onclick="incrementAmount(1_000_000)"
+									class="transaction-amount-button w-full h-10">
+									100만원
+								</button>
+							</div>
+							<div class="col-span-3">
+								<button
+									onclick="incrementAmount(10_000_000)"
+									class="transaction-amount-button w-full h-10">
+									1,000만원
+								</button>
+							</div>
+						</div>
+
+						<p class="text-red-500 leading-8">
+							*확인 한 계좌번호로 선입금 후 입금하신 금액을 정확히 입력하고 신청하기 버튼을 눌러주세요
+						</p>
 					</div>
-					<div class="swiper-slide">
-						<img
-							class="w-full"
-							src="assets/images/carousel/7.png"
-							alt="" />
-					</div>
-					<div class="swiper-slide">
-						<img
-							class="w-full"
-							src="assets/images/carousel/8.jpg"
-							alt="" />
-					</div>
-					<div class="swiper-slide">
-						<img
-							class="w-full"
-							src="assets/images/carousel/9.jpg"
-							alt="" />
+
+					<div class="p-4">
+						<button
+							class="w-full border-2 border-primary text-primary text-2xl py-2 rounded-lg font-bold bg-primaryBg">
+							충전신청
+						</button>
 					</div>
 				</div>
 
-				<div class="swiper-pagination"></div>
+				<!-- Transaction History Section -->
+				<div class="bg-secondaryBg border border-white/20 text-white p-5 rounded mb-2">
+					<div class="p-4">
+						<div
+							class="t mb-4"
+							style="border: none">
+							<p class="text-xl">◎충전신청내역</p>
+						</div>
+
+						<table class="w-full border-t-2 border-primary table-lists mb-5">
+							<thead>
+								<tr class="bg-primary/10">
+									<th>신청시간</th>
+									<th>신청금액</th>
+									<th>상태</th>
+									<th>처리시간</th>
+									<th>삭제</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</div>
+				<!-- Transaction History Section -->
 			</div>
-			<!-- Carousel Section -->
-
-			<!-- Event Section -->
-			<div class="w-full p-4 bg-primary/10">
-				<div class="event-header border-l-4 border-primary pl-2 mb-2">
-					<h2 class="text-primary font-bold">이벤트 <span>Event</span></h2>
-				</div>
-
-				<div class="swiper-event overflow-hidden relative pb-5">
-					<div class="swiper-wrapper">
-						<!-- Slides -->
-						<div class="swiper-slide py-2">
-							<div
-								class="slide-header p-2 rounded-full px-4 text-white bg-primaryBg/50 border border-primary/50">
-								기타
-							</div>
-							<img
-								class="w-full rounded-lg border border-primary"
-								src="assets/images/events/1.png"
-								alt="" />
-						</div>
-						<div class="swiper-slide py-2">
-							<div
-								class="slide-header p-2 rounded-full px-4 text-white bg-primaryBg/50 border border-primary/50">
-								기타
-							</div>
-							<img
-								class="w-full rounded-lg border border-primary"
-								src="assets/images/events/2.png"
-								alt="" />
-						</div>
-						<div class="swiper-slide py-2">
-							<div
-								class="slide-header p-2 rounded-full px-4 text-white bg-primaryBg/50 border border-primary/50">
-								기타
-							</div>
-							<img
-								class="w-full rounded-lg border border-primary"
-								src="assets/images/events/3.jpg"
-								alt="" />
-						</div>
-						<div class="swiper-slide py-2">
-							<div
-								class="slide-header p-2 rounded-full px-4 text-white bg-primaryBg/50 border border-primary/50">
-								기타
-							</div>
-							<img
-								class="w-full rounded-lg border border-primary"
-								src="assets/images/events/4.jpg"
-								alt="" />
-						</div>
-						<div class="swiper-slide py-2">
-							<div
-								class="slide-header p-2 rounded-full px-4 text-white bg-primaryBg/50 border border-primary/50">
-								라이브카지노
-							</div>
-							<img
-								class="w-full rounded-lg border border-primary"
-								src="assets/images/events/5.jpg"
-								alt="" />
-						</div>
-						<div class="swiper-slide py-2">
-							<div
-								class="slide-header p-2 rounded-full px-4 text-white bg-primaryBg/50 border border-primary/50">
-								스포츠
-							</div>
-							<img
-								class="w-full rounded-lg border border-primary"
-								src="assets/images/events/6.png"
-								alt="" />
-						</div>
-						<div class="swiper-slide py-2">
-							<div
-								class="slide-header p-2 rounded-full px-4 text-white bg-primaryBg/50 border border-primary/50">
-								라이브카지노
-							</div>
-							<img
-								class="w-full rounded-lg border border-primary"
-								src="assets/images/events/7.png"
-								alt="" />
-						</div>
-						<div class="swiper-slide py-2">
-							<div
-								class="slide-header p-2 rounded-full px-4 text-white bg-primaryBg/50 border border-primary/50">
-								라이브카지노
-							</div>
-							<img
-								class="w-full rounded-lg border border-primary"
-								src="assets/images/events/8.png"
-								alt="" />
-						</div>
-						<div class="swiper-slide py-2">
-							<div
-								class="slide-header p-2 rounded-full px-4 text-white bg-primaryBg/50 border border-primary/50">
-								슬롯
-							</div>
-							<img
-								class="w-full rounded-lg border border-primary"
-								src="assets/images/events/9.png"
-								alt="" />
-						</div>
-						<div class="swiper-slide py-2">
-							<div
-								class="slide-header p-2 rounded-full px-4 text-white bg-primaryBg/50 border border-primary/50">
-								슬롯
-							</div>
-							<img
-								class="w-full rounded-lg border border-primary"
-								src="assets/images/events/10.png"
-								alt="" />
-						</div>
-						<div class="swiper-slide py-2">
-							<div
-								class="slide-header p-2 rounded-full px-4 text-white bg-primaryBg/50 border border-primary/50">
-								포커
-							</div>
-							<img
-								class="w-full rounded-lg border border-primary"
-								src="assets/images/events/11.png"
-								alt="" />
-						</div>
-						<div class="swiper-slide py-2">
-							<div
-								class="slide-header p-2 rounded-full px-4 text-white bg-primaryBg/50 border border-primary/50">
-								스포츠
-							</div>
-							<img
-								class="w-full rounded-lg border border-primary"
-								src="assets/images/events/12.png"
-								alt="" />
-						</div>
-						<div class="swiper-slide py-2">
-							<div
-								class="slide-header p-2 rounded-full px-4 text-white bg-primaryBg/50 border border-primary/50">
-								스포츠
-							</div>
-							<img
-								class="w-full rounded-lg border border-primary"
-								src="assets/images/events/13.png"
-								alt="" />
-						</div>
-						<div class="swiper-slide py-2">
-							<div
-								class="slide-header p-2 rounded-full px-4 text-white bg-primaryBg/50 border border-primary/50">
-								라이브카지노
-							</div>
-							<img
-								class="w-full rounded-lg border border-primary"
-								src="assets/images/events/14.png"
-								alt="" />
-						</div>
-						<div class="swiper-slide py-2">
-							<div
-								class="slide-header p-2 rounded-full px-4 text-white bg-primaryBg/50 border border-primary/50">
-								기타
-							</div>
-							<img
-								class="w-full rounded-lg border border-primary"
-								src="assets/images/events/15.png"
-								alt="" />
-						</div>
-						<div class="swiper-slide py-2">
-							<div
-								class="slide-header p-2 rounded-full px-4 text-white bg-primaryBg/50 border border-primary/50">
-								기타
-							</div>
-							<img
-								class="w-full rounded-lg border border-primary"
-								src="assets/images/events/16.png"
-								alt="" />
-						</div>
-					</div>
-
-					<div class="swiper-pagination"></div>
-				</div>
-			</div>
-			<!-- Event Section -->
-
-			<!-- Notice Section -->
-			<div class="py-4 h-80">
-				<div class="w-full h-64">
-					<div class="py-2 text-center">
-						<h2 class="text-xl font-bold text-primary">공지사항</h2>
-					</div>
-					<ul class="text-white text-center p-4">
-						<li class="border-b border-primary/50 flex py-2.5 items-center justify-between gap-2 text-sm">
-							<div class="col-span-3">
-								<div class="w-16 block rounded-xl text-xs rounded-lg bg-red-500 px-4 py-1">중요</div>
-							</div>
-							<div class="col-span-6 text-left">
-								<label class="text-ellipsis overflow-hidden block whitespace-nowrap w-48">
-									새롭게 도입된 "PAX 코인" 이용sdsds sdasda sdsd 방법
-								</label>
-							</div>
-							<div>2022.05.20</div>
-						</li>
-						<li class="border-b border-primary/50 flex py-2.5 items-center justify-between gap-2 text-sm">
-							<div class="col-span-3">
-								<div class="w-16 block rounded-xl text-xs rounded-lg bg-red-500 px-4 py-1">중요</div>
-							</div>
-							<div class="col-span-6 text-left">
-								<label class="text-ellipsis overflow-hidden block whitespace-nowrap w-48">
-									구글 OTP 서비스 도입
-								</label>
-							</div>
-							<div>2022.05.20</div>
-						</li>
-						<li class="border-b border-primary/50 flex py-2.5 items-center justify-between gap-2 text-sm">
-							<div class="col-span-3">
-								<div class="block text-xs w-16 text-primary">[슬롯]</div>
-							</div>
-							<div class="col-span-6 text-left">
-								<label class="text-ellipsis overflow-hidden block whitespace-nowrap w-48">
-									신규 슬롯 게임사 원터치(OneTouch) 오픈 안내
-								</label>
-							</div>
-							<div>2022.05.20</div>
-						</li>
-						<li class="border-b border-primary/50 flex py-2.5 items-center justify-between gap-2 text-sm">
-							<div class="col-span-3">
-								<div class="block text-xs w-16 text-primary">[일반안내]</div>
-							</div>
-							<div class="col-span-6 text-left">
-								<label class="text-ellipsis overflow-hidden block whitespace-nowrap w-48">
-									2024 신년인사
-								</label>
-							</div>
-							<div>2022.05.20</div>
-						</li>
-						<li class="flex py-2.5 items-center justify-between gap-2 text-sm">
-							<div class="col-span-3">
-								<div class="block text-xs w-16 text-primary">[스포츠]</div>
-							</div>
-							<div class="col-span-6 text-left">
-								<label class="text-ellipsis overflow-hidden block whitespace-nowrap w-48">
-									스보벳 스포츠 베팅 한도 안내
-								</label>
-							</div>
-							<div>2022.05.20</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<!-- Notice Section -->
+			<!-- Page Body Section -->
 
 			<!-- Footer Section -->
 			<footer class="w-full bg-secondaryBg pb-4 text-center">
@@ -970,7 +845,7 @@
 									<span>파트너</span>
 								</li>
 								<li onclick="location.href='deposit.html'">
-									<span>충전</span>
+									<span class="text-primary">충전</span>
 								</li>
 								<li onclick="location.href='withdrawal.html'">
 									<span>환전</span>
@@ -1170,6 +1045,5 @@
 			</div>
 		</div>
 	</body>
-
 	<script src="assets/js/script.js"></script>
 </html>

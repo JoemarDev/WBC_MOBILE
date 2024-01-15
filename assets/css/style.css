@@ -17,6 +17,11 @@
 	animation: marquee 20s linear infinite;
 }
 
+input:focus,
+textarea:focus {
+	outline: none;
+}
+
 @keyframes marquee {
 	0% {
 		text-indent: 90%;
@@ -29,7 +34,7 @@
 
 .marquee-icon {
 	background: #000 url(../images/icons/megaphone.png) 10px 50% no-repeat;
-	background-size: 15px;
+	background-size: 14px;
 	padding: 5px 0px;
 	border-radius: 100px;
 	position: absolute;
@@ -44,6 +49,206 @@
 }
 
 .swiper .swiper-slide img {
-	height: 160px;
+	min-height: 160px;
 	object-fit: cover;
+}
+
+.swiper-event .swiper-slide img {
+	min-height: 140px;
+	object-fit: cover;
+}
+
+.swiper-event .slide-header {
+	margin-bottom: 10px;
+}
+
+.swiper-event .swiper-pagination {
+	bottom: 0px;
+	color: #0eafdd;
+}
+
+.footer-marquee {
+	width: 100%;
+	white-space: nowrap;
+	position: relative;
+}
+
+.footer-marquee img {
+	width: 100%;
+	height: 40px;
+	margin: auto;
+	object-fit: contain;
+}
+
+.footer-marquee > .swiper-wrapper {
+	transition-timing-function: linear !important;
+}
+
+.modal-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 10;
+	overflow-y: scroll;
+}
+
+.modal-header {
+	position: relative;
+	text-align: center;
+	padding: 10px;
+}
+
+.modal-header .header-close {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+.modal-logo img {
+	margin: auto;
+	padding: 20px 10px;
+}
+
+.modal-overlay {
+	z-index: 10;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: #00000080;
+	backdrop-filter: blur(10px);
+}
+.sidebar-header {
+	position: sticky;
+	top: 0;
+}
+
+.sidebar-footer {
+	position: sticky;
+	bottom: 0;
+}
+
+.modal-overlay {
+	z-index: 14;
+}
+
+.sidebar-wrapper {
+	position: fixed;
+	height: 100vh;
+	width: 100%;
+	left: -100%;
+	top: 0;
+	z-index: 15;
+	transition: all 0.5s;
+}
+
+.sidebar-section {
+	width: 80%;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	overflow-y: scroll;
+}
+
+.sidebar-menu {
+	min-height: 300px;
+	overflow-y: scroll;
+}
+
+.sidebar-menu ul li {
+	padding: 10px 20px;
+	color: #fff;
+	font-weight: 600;
+	background: #0eb0dd16;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+
+.close-siderbar {
+	position: absolute;
+	top: 50%;
+	right: 30px;
+}
+
+.transaction-box-slide {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 100%;
+}
+
+.table-lists th {
+	padding: 8px 0px;
+	color: #fff;
+}
+
+.table-lists td {
+	padding: 8px 0px;
+	color: #fff;
+}
+
+.table-lists tbody tr {
+	border-top: 1px solid #333;
+}
+
+.table-lists tbody tr:last-child {
+	border-bottom: 1px solid #333;
+}
+
+.text-ellipsis {
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	max-width: 100%; /* Ensure the label takes up 100% of the parent td's width */
+}
+
+.page-item img {
+	width: 35px;
+	height: 35px;
+}
+
+.page-number {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 35px;
+	height: 35px;
+	background: #333;
+	border-radius: 5px;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.page-number.active {
+	background: #0eafdd !important;
+	color: #333;
+}
+
+.tab-menu {
+	background: #fff;
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+.tab-menu div {
+	border-right: 1px solid #33333342;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.tab-menu .active {
+	background: #0eafdd;
+	color: #333;
+}
+
+.transaction-amount-button {
+	background: #0eafdd;
+	border: 1px solid #0eafdd;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 600;
 }

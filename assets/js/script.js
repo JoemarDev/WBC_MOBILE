@@ -29,6 +29,35 @@ const swiper = new Swiper(".swiper", {
 	},
 });
 
+const swiperTransaction = new Swiper(".transaction-swiper", {
+	direction: "vertical",
+	speed: 1000,
+	loop: true,
+	autoplay: {
+		delay: 3000,
+	},
+	spaceBetween: 20,
+});
+
+const swiperEvent = new Swiper(".swiper-event", {
+	// Optional parameters
+	// direction: "vertical",
+	speed: 500,
+	loop: true,
+
+	centeredSlides: true,
+	spaceBetween: 20,
+	slidesPerView: "auto",
+	// If we need pagination
+	pagination: {
+		el: ".swiper-pagination",
+		type: "custom", // use custom rendering
+		renderCustom: function (swiper, current, total) {
+			return current + " / " + total; // format it as 'current/total'
+		},
+	},
+});
+
 const gameMenuSwiper = new Swiper(".swiper-game-menu", {
 	speed: 500,
 	loop: false,
@@ -46,7 +75,7 @@ const footerSwiper = new Swiper(".footer-marquee", {
 	freeMode: true,
 	loop: true,
 	spaceBetween: 20,
-	slidesPerView: 8,
+	slidesPerView: 4,
 });
 
 const pageLogin = () => {
@@ -60,7 +89,6 @@ const pageLogout = () => {
 };
 
 const openLoginForm = () => {
-	$(".modal-overlay").show();
 	$(".login-form").show();
 	$("body").css({
 		overflow: "hidden",
@@ -77,7 +105,6 @@ const closeLoginForm = () => {
 };
 
 const openRegisterForm = () => {
-	$(".modal-overlay").show();
 	$(".register-form").show();
 	$("body").css({
 		overflow: "hidden",
@@ -109,4 +136,72 @@ const resetTransactionAmount = () => {
 
 const openAnnouncement = (elem) => {
 	$(elem).parent().next().toggle();
+};
+
+const openSidebar = () => {
+	$(".modal-overlay").show();
+	$(".sidebar-wrapper").css({
+		left: "0%",
+	});
+	$("body").css({
+		overflow: "hidden",
+	});
+};
+
+const closeSidebar = () => {
+	$(".modal-overlay").hide();
+	$(".sidebar-wrapper").css({
+		left: "-100%",
+	});
+	$("body").css({
+		overflow: "scroll",
+	});
+};
+
+const openLoginFromSideBar = () => {
+	closeSidebar();
+	setTimeout(() => {
+		openLoginForm();
+	}, 200);
+};
+
+const openRegisterFromSidebar = () => {
+	closeSidebar();
+	setTimeout(() => {
+		openRegisterForm();
+	}, 200);
+};
+
+const closeTransactionSlide = () => {
+	$(".transaction-slide").hide();
+};
+
+let firstMenuToogle = false;
+let secondMenuToogle = false;
+const toogleFirstMenu = (elem) => {
+	$(".first-menu").toggle();
+
+	if (firstMenuToogle) {
+		$(elem).find(".show-icon").show();
+		$(elem).find(".close-icon").hide();
+	} else {
+		$(elem).find(".show-icon").hide();
+		$(elem).find(".close-icon").show();
+	}
+
+	firstMenuToogle = !firstMenuToogle;
+};
+
+const toogleSecondMenu = (elem) => {
+	$(".second-menu").toggle();
+
+	if (secondMenuToogle) {
+		$(elem).find(".show-icon").show();
+		$(elem).find(".close-icon").hide();
+	} else {
+		$(elem).find(".show-icon").hide();
+		$(elem).find(".close-icon").show();
+	}
+
+	secondMenuToogle = !secondMenuToogle;
 };
